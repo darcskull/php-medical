@@ -1,49 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+    <meta charset="UTF-8">
     <title>Login</title>
-    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<div><a href="register.php">Registration</a></div>
+<h2>Login</h2>
+<form action="function/login.php" method="POST">
+    <div>Email:</div>
     <div>
-        <h1>Login</h1>
-        <form action="dataBase/initialDataBase.php" method="POST">
-            <div class="input">
-                <input type="text" name="username" placeholder=" ">
-                <label>Username:</label>
-            </div>
-            <div class="input">
-                <input type="password" name="password" placeholder=" ">
-                <label>Password:</label>
-            </div>
-            <div class="button">
-                <button type="submit" name="loginButton">Log In</button>
-            </div>
-            <div class="link">
-               <a href="registration.php">Registration</a>
-            </div>
-        </form>
-        <?php
-        if (!isset($_GET['loginButton'])) {
+        <label for="email"></label>
+        <input type="email" id="email" name="email" required>
+    </div>
+    <div>Password:</div>
+    <div>
+        <label for="password"></label>
+        <input type="password" id="password" name="password" required>
+    </div>
+    <button type="submit" name="login">Login</button>
+</form>
+<div id="errorMessage" style="color: red;">
+    <?php
+    if (!isset($_GET['login'])) {
+        exit();
+    } else {
+        $signupCheck = $_GET['login'];
+
+        if ($signupCheck == "empty") {
+            echo "You did not fill all fields";
             exit();
-        } else {
-            $signupCheck = $_GET['login'];
-
-            if ($signupCheck == "empty") {
-                echo "<p class='error'>You did not fill all fields</p>";
-                exit();
-            } else if ($signupCheck == "usernameDoesNotExist") {
-                echo '<script>alert("This username does not exist!")</script>';
-                exit();
-            } else if ($signupCheck == "wrongPassword") {
-                echo '<script>alert("Wrong password!")</script>';
-                exit();
-            } else if ($signupCheck == "success") {
-                echo '<script>alert("Logged in successfully!")</script>';
-                exit();
-            }
+        } else if ($signupCheck == "usernameDoesNotExist") {
+            echo "This username does not exist!";
+            exit();
+        } else if ($signupCheck == "wrongPassword") {
+            echo "Wrong password!";
+            exit();
         }
-        ?>
+    }
+    ?>
+</div>
 </body>
-
 </html>
