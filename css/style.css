@@ -19,3 +19,19 @@ button:hover {
 a {
     font-size: 18px;
 }
+
+.form-container {
+    display: inline-block;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}

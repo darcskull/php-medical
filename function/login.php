@@ -41,7 +41,7 @@ function loginUser($conn, $email, $password)
         $_SESSION["isDoctor"] = $usernameExists["isDoctor"];
         $_SESSION["phoneNumber"] = $usernameExists["phoneNumber"];
         $_SESSION["personalNumber"] = $usernameExists["personalNumber"];
-        header("Location: ../home-page.php?login=success");
+        header("Location: ../patientsView.php");
     }
     exit();
 }
