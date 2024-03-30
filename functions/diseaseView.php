@@ -9,6 +9,7 @@ function findAllDiseases($conn)
     if (mysqli_num_rows($result) > 0) {
         while ($row = mysqli_fetch_assoc($result)) {
             $disease = new stdClass();
+            $disease->id = $row['id'];
             $disease->name = $row['name'];
             $disease->description = $row['description'];
             $disease->type= $row['type'];
