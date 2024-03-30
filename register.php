@@ -8,7 +8,7 @@
 <body>
 <div><a href="index.php">Back to Login</a></div>
 <h2>User Registration</h2>
-<form action="function/register.php" method="post">
+<form action="functions/register.php" method="post">
     <div>First Name:</div>
     <input type="text" name="firstName" required><br>
 

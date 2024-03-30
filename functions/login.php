@@ -25,23 +25,27 @@ function emptyInputLogin($email, $password)
 
 function loginUser($conn, $email, $password)
 {
-    $usernameExists = usernameExists($conn, $email);
+    $emailExists = emailExists($conn, $email);
 
-    if ($usernameExists === false) {
-        header("Location: ../index.php?login=usernameDoesNotExist");
+    if ($emailExists === false) {
+        header("Location: ../index.php?login=emailDoesNotExist");
         exit();
     }
-    $passwordData = $usernameExists["password"];
+    $passwordData = $emailExists["password"];
 
     if ($password != $passwordData) {
         header("Location: ../index.php?login=wrongPassword");
     } else {
-        $_SESSION["userid"] = $usernameExists["id"];
-        $_SESSION["email"] = $usernameExists["email"];
-        $_SESSION["isDoctor"] = $usernameExists["isDoctor"];
-        $_SESSION["phoneNumber"] = $usernameExists["phoneNumber"];
-        $_SESSION["personalNumber"] = $usernameExists["personalNumber"];
-        header("Location: ../patientsView.php");
+        $_SESSION["userid"] = $emailExists["id"];
+        $_SESSION["email"] = $emailExists["email"];
+        $_SESSION["isDoctor"] = $emailExists["isDoctor"];
+        $_SESSION["phoneNumber"] = $emailExists["phoneNumber"];
+        $_SESSION["personalNumber"] = $emailExists["personalNumber"];
+        if ($emailExists["isDoctor"]) {
+            header("Location: ../doctorPage/patientsView.php");
+        } else {
+            header("Location: ../patientPage/doctorsView.php");
+        }
     }
     exit();
 }

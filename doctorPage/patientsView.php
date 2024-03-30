@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <?php
-require_once 'function/userView.php';
-require_once 'function/initialDataBase.php';
-$users = findAllUsers($conn,false);
+session_start();
+require_once '../functions/userView.php';
+require_once '../functions/initialDataBase.php';
+$isDoctor = isset($_SESSION["isDoctor"]) && $_SESSION["isDoctor"];
+$users = findAllUsers($conn, !$isDoctor);
 ?>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>Object Table</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-<div><a href="index.php">Logout</a></div>
+<form method="post" action="../functions/logout.php">
+    <button type="submit">Logout</button>
+</form>
 <form action="/medicines" method="get" class="form-container">
     <button type="submit">Medicines</button>
 </form>

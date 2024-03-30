@@ -8,7 +8,7 @@
 <body>
 <div><a href="register.php">Registration</a></div>
 <h2>Login</h2>
-<form action="function/login.php" method="POST">
+<form action="functions/login.php" method="POST">
     <div>Email:</div>
     <div>
         <label for="email"></label>
@@ -31,8 +31,8 @@
         if ($signupCheck == "empty") {
             echo "You did not fill all fields";
             exit();
-        } else if ($signupCheck == "usernameDoesNotExist") {
-            echo "This username does not exist!";
+        } else if ($signupCheck == "emailDoesNotExist") {
+            echo "This email is not registered";
             exit();
         } else if ($signupCheck == "wrongPassword") {
             echo "Wrong password!";

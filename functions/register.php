@@ -15,7 +15,7 @@ if (isset($_POST['register'])) {
         header("Location: ../register.php?register=empty");
         exit();
     }
-    if (usernameExists($conn, $email)) {
+    if (emailExists($conn, $email)) {
         header("Location: ../register.php?register=emailExist");
         exit();
     }

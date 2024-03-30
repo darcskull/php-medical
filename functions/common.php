@@ -1,6 +1,6 @@
 <?php
 
-function usernameExists($conn, $email)
+function emailExists($conn, $email)
 {
     $sql = "SELECT * FROM `user_data` WHERE email = ?;";
     $stmt = mysqli_stmt_init($conn);
