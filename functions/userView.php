@@ -24,4 +24,3 @@ function findAllUsers($conn, $isDoctor)
 
     return $users;
 }
-

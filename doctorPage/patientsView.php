@@ -16,13 +16,13 @@ $users = findAllUsers($conn, !$isDoctor);
 <form method="post" action="../functions/logout.php">
     <button type="submit">Logout</button>
 </form>
-<form action="/medicines" method="get" class="form-container">
+<form action="medicinesView.php" method="get" class="form-container">
     <button type="submit">Medicines</button>
 </form>
-<form action="/diseases" method="get" class="form-container">
+<form action="diseasesView.php" method="get" class="form-container">
     <button type="submit">Diseases</button>
 </form>
-<form action="/diagnosis" method="get" class="form-container">
+<form action="diagnosisView.php" method="get" class="form-container">
     <button type="submit">Diagnosis</button>
 </form>
 <h2>Patients</h2>
