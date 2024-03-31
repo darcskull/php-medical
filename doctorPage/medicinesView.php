@@ -23,7 +23,7 @@ $medicines = findAllMedicines($conn);
 <form action="diagnosisView.php" method="get" class="form-container">
     <button type="submit">Diagnosis</button>
 </form>
-<form action="/form/medicine" method="get">
+<form action="createMedicine.php" method="get">
     <button type="submit">Add new Medicine</button>
 </form>
 <h2>Medicines</h2>
