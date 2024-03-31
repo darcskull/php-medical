@@ -113,3 +113,13 @@ function createMedicine($conn, $name, $description, $diseaseId, $price)
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 }
+
+function createOrder($conn, $medicineId, $number, $price, $address, $userId, $phoneNumber)
+{
+    $sql = "INSERT INTO `order_data` (medicineId, number, price, address, userId, phoneNumber) VALUES (?, ?, ?, ?, ?, ?)";
+    $stmt = mysqli_stmt_init($conn);
+    mysqli_stmt_prepare($stmt, $sql);
+    mysqli_stmt_bind_param($stmt, "ssssss", $medicineId, $number, $price, $address, $userId, $phoneNumber);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+}
