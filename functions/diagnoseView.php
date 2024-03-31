@@ -36,6 +36,7 @@ function getArr(mysqli_result $result, $conn, array $diagnoses): array
             $diagnose->email = $rowUser['email'];
             $diagnose->personalNumber = $rowUser['personalNumber'];
             $diagnose->phoneNumber = $rowUser['phoneNumber'];
+            $diagnose->diseaseId = $rowDisease['id'];
             $diagnose->diseaseName = $rowDisease['name'];
             $diagnose->diseaseDescription = $rowDisease['description'];
             $diagnose->diseaseType = $rowDisease['type'];

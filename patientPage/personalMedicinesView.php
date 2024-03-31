@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <?php
+session_start();
 require_once '../functions/medicineView.php';
 require_once '../functions/initialDataBase.php';
-$medicines = findAllMedicines($conn);
+$userId = $_SESSION["userid"];
+$medicines = personalMedicines($conn, $userId);
 ?>
 <html>
 <head>
