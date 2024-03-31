@@ -34,6 +34,16 @@ function getUser($conn, $id) {
     return mysqli_fetch_assoc($resultData);
 }
 
+function getMedicine($conn, $id) {
+    $sql = "SELECT * FROM MEDICINE WHERE id = ?";
+    $stmt = mysqli_stmt_init($conn);
+    mysqli_stmt_prepare($stmt, $sql);
+    mysqli_stmt_bind_param($stmt, "s", $id);
+    mysqli_stmt_execute($stmt);
+    $resultData = mysqli_stmt_get_result($stmt);
+    return mysqli_fetch_assoc($resultData);
+}
+
 
 function diagnoseExists($conn, $userId, $diseaseId): bool
 {
