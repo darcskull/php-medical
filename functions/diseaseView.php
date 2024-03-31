@@ -1,7 +1,7 @@
 <?php
 require_once 'initialDataBase.php';
 
-function findAllDiseases($conn)
+function findAllDiseases($conn): array
 {
     $diseases = [];
     $sql = "SELECT * FROM DISEASE";

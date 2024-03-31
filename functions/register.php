@@ -9,7 +9,7 @@ if (isset($_POST['register'])) {
     $email = $_POST['email'];
     $phoneNumber = $_POST['phoneNumber'];
     $personalNumber = $_POST['personalNumber'];
-    $isDoctor = isset($_POST['isDoctor']) ? $_POST['isDoctor'] : false;
+    $isDoctor = $_POST['isDoctor'] ?? false;
 
     if (emptyInputRegistration($firstName, $lastName, $email, $phoneNumber, $personalNumber)) {
         header("Location: ../register.php?register=empty");
@@ -25,7 +25,7 @@ if (isset($_POST['register'])) {
     exit();
 }
 
-function emptyInputRegistration($username, $password, $email, $phoneNumber, $personalNumber)
+function emptyInputRegistration($username, $password, $email, $phoneNumber, $personalNumber): bool
 {
     return empty($username) || empty($password) || empty($email) || empty($phoneNumber) || empty($personalNumber);
 }

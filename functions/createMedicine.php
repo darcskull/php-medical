@@ -27,7 +27,7 @@ if (medicineExists($conn, $name)) {
 exit();
 
 
-function emptyInputMedicine($name, $description, $diseaseId, $price)
+function emptyInputMedicine($name, $description, $diseaseId, $price): bool
 {
     return empty($name) || empty($diseaseId) || empty($description) || empty($price);
 }

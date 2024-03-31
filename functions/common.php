@@ -35,7 +35,7 @@ function getUser($conn, $id) {
 }
 
 
-function diagnoseExists($conn, $userId, $diseaseId)
+function diagnoseExists($conn, $userId, $diseaseId): bool
 {
     $sql = "SELECT * FROM DIAGNOSIS WHERE userId = ? AND diseaseId = ?";
     $stmt = mysqli_stmt_init($conn);
@@ -58,7 +58,7 @@ function createDiagnose($conn, $userId, $diseaseId)
     mysqli_stmt_close($stmt);
 }
 
-function diseaseExists($conn, $name)
+function diseaseExists($conn, $name): bool
 {
     $sql = "SELECT * FROM DISEASE WHERE name = ?";
     $stmt = mysqli_stmt_init($conn);
@@ -81,7 +81,7 @@ function createDisease($conn, $name, $type, $description)
     mysqli_stmt_close($stmt);
 }
 
-function medicineExists($conn, $name)
+function medicineExists($conn, $name): bool
 {
     $sql = "SELECT * FROM MEDICINE WHERE name = ?";
     $stmt = mysqli_stmt_init($conn);

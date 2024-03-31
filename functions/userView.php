@@ -1,7 +1,7 @@
 <?php
 require_once 'initialDataBase.php';
 require_once 'common.php';
-function findAllUsers($conn, $isDoctor)
+function findAllUsers($conn, $isDoctor): array
 {
     $users = [];
     $sql = "SELECT * FROM `user_data` WHERE isDoctor = ?;";

@@ -18,7 +18,7 @@ if (isset($_POST["login"])) {
     exit();
 }
 
-function emptyInputLogin($email, $password)
+function emptyInputLogin($email, $password): bool
 {
     return empty($email) || empty($password);
 }

@@ -20,7 +20,7 @@ if (diseaseExists($conn, $name)) {
 }
 exit();
 
-function emptyInputDisease($name, $type, $description)
+function emptyInputDisease($name, $type, $description): bool
 {
     return empty($name) || empty($type) || empty($description);
 }

@@ -15,7 +15,7 @@ $diseases = findAllDiseases($conn);
     <button type="submit">Logout</button>
 </form>
 <form action="medicinesView.php" method="get">
-    <button type="submit">Medicines</button>
+    <button type="submit">Back to Medicines</button>
 </form>
 <h2>Create Medicine</h2>
 <form action="../functions/createMedicine.php" method="POST">
